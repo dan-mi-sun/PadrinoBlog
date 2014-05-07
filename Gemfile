@@ -25,7 +25,7 @@ gem 'pry-byebug'
 gem 'database_cleaner'
 
 # Padrino Stable Gem
-gem 'padrino', '0.12.1'
+gem 'padrino', '0.11.4'
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
