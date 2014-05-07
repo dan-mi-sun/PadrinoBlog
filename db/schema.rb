@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 7) do
+ActiveRecord::Schema.define(version: 8) do
 
   create_table "authors", force: true do |t|
     t.text     "first_name"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 7) do
     t.integer  "author_id"
     t.text     "title"
     t.integer  "post_date"
-    t.integer  "body"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
