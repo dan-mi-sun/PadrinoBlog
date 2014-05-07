@@ -2,6 +2,7 @@ RACK_ENV = 'test' unless defined?(RACK_ENV)
 require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
 
 require "test/unit"
+require 'database_cleaner'
 
 class Test::Unit::TestCase
   include Rack::Test::Methods
@@ -20,12 +21,11 @@ class Test::Unit::TestCase
     @app ||= Padrino.application
   end
 
-    def setup 
-      DatabaseCleaner.strategy = :truncation
-      DatabaseCleaner.start
-    end
+  def setup 
+    DatabaseCleaner.start
+  end
 
-    def teardown
-      DatabaseCleaner.clean
-    end
+  def teardown
+    DatabaseCleaner.clean
+  end
 end

@@ -1,17 +1,12 @@
+ruby '2.0.0'
+
 source 'https://rubygems.org'
-
-# Distribute your app as a gem
-# gemspec
-
-# Server requirements
-# gem 'thin' # or mongrel
-# gem 'trinidad', :platform => 'jruby'
-
-# Optional JSON codec (faster performance)
-# gem 'oj'
 
 # Project requirements
 gem 'rake'
+
+# Padrino Stable Gem
+gem 'padrino', '0.11.4'
 
 # Component requirements
 gem 'erubis', '~> 2.7.0'
@@ -19,18 +14,10 @@ gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
 
 # Test requirements
-gem 'shoulda', :group => 'test'
-gem 'rack-test', :require => 'rack/test', :group => 'test'
+group :test do
+  gem 'shoulda', '~> 3.4.0'
+  gem 'rack-test', :require => 'rack/test'
+  gem 'database_cleaner'
+end
+
 gem 'pry-byebug'
-gem 'database_cleaner'
-
-# Padrino Stable Gem
-gem 'padrino', '0.11.4'
-
-# Or Padrino Edge
-# gem 'padrino', :github => 'padrino/padrino-framework'
-
-# Or Individual Gems
-# %w(core support gen helpers cache mailer admin).each do |g|
-#   gem 'padrino-' + g, '0.12.1'
-# end
