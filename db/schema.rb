@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 6) do
+ActiveRecord::Schema.define(version: 7) do
 
   create_table "authors", force: true do |t|
     t.text     "first_name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 6) do
     t.text     "posted_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body"
   end
 
   create_table "post_tags", force: true do |t|
