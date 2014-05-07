@@ -4,6 +4,8 @@ class PostTest < Test::Unit::TestCase
   context "Post Model" do
 
     should have_many :comments
+    should have_many :post_tags
+    should belong_to :author
 
   end
 end
