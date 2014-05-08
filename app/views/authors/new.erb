@@ -11,7 +11,7 @@
 
     <%= flash[:notice] %>
 
-      <% form_for @author, 'new' do |f| %>
+      <% form_for @author, url_for(:authors, :create) do |f| %>
         <% field_set_tag do %>
           <%= f.label :first_name %>
           <%= f.text_field :first_name %>
@@ -28,13 +28,8 @@
         <% end %>
 
         <% field_set_tag do %>
-          <%= f.label :github %>
-          <%= f.text_field :github %>
-        <% end %>
-
-        <% field_set_tag do %>
-          <%= f.label :twitter %>
-          <%= f.text_field :twitter %>
+          <%= f.label :website %>
+          <%= f.text_field :website %>
         <% end %>
 
       <%= submit_tag "Submit" %>

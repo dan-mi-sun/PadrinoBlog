@@ -34,3 +34,9 @@ end
 
 # Mounts the core application for this project
 Padrino.mount('PadrinoBlog::App', :app_file => Padrino.root('app/app.rb')).to('/')
+
+require 'twilio-ruby'
+
+# put your own credentials here
+ TWILIO_ACCOUNT_SID = 'AC63d638450d7ad8ce9b575ec0ddc1d516' 
+ TWILIO_AUTH_TOKEN = 'b462ba7413a93c1b07f75137bf6d6851' 

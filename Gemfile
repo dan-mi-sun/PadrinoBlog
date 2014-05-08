@@ -12,6 +12,7 @@ gem 'padrino', '0.11.4'
 gem 'erubis', '~> 2.7.0'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
+gem 'twilio-ruby', '~> 3.11'
 
 # Test requirements
 group :test do
