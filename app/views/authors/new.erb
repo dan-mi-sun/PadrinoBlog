@@ -10,6 +10,13 @@
       <h1>Add Author Page</h1>
 
     <%= flash[:notice] %>
+      <ul> 
+    <% if @error_message %>
+      <% @error_message.each do |error| %>
+        <li><%= error %> </li>
+    <% end %>
+    <% end %>
+  </ul>
 
       <% form_for @author, url_for(:authors, :create) do |f| %>
         <% field_set_tag do %>

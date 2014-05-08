@@ -28,9 +28,10 @@ PadrinoBlog::App.controllers :authors do
     @author = Author.new(params[:author])
 
     if @author.save
+      flash[:notice] = "WHHHHHHHHHHHHHYYYYYYYYYYYYYYYYYY"
       redirect '/'
     else
-      flash[:notice] = "WHHHHHHHHHHHHHYYYYYYYYYYYYYYYYYY"
+      @error_message = @author.errors.full_messages
       render :'authors/new'
     end
 
