@@ -7,6 +7,7 @@ class PostTest < Test::Unit::TestCase
     should have_many :post_tags
     should belong_to :author
     should have_many(:tags).through(:post_tags)
+    should validate_presence_of(:author_id)
 
   end
 end

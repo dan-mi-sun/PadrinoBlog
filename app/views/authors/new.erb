@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Author add form</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+
+
+    <body>
+      <h1>Add Author Page</h1>
+
+    <%= flash[:notice] %>
+
+      <% form_for @author, 'new' do |f| %>
+        <% field_set_tag do %>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+        <% end %>
+        
+        <% field_set_tag do %>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+        <% end %>
+
+        <% field_set_tag do %>
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        <% end %>
+
+        <% field_set_tag do %>
+          <%= f.label :github %>
+          <%= f.text_field :github %>
+        <% end %>
+
+        <% field_set_tag do %>
+          <%= f.label :twitter %>
+          <%= f.text_field :twitter %>
+        <% end %>
+
+      <%= submit_tag "Submit" %>
+      <% end %>
+
+    </body>
+</html>

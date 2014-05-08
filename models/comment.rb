@@ -4,4 +4,6 @@ class Comment < ActiveRecord::Base
 
   belongs_to :parent, :class_name => 'Comment', :foreign_key => :comment_id
 
+  validates_presence_of :body, :presence => :true
+
 end

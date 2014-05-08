@@ -6,6 +6,7 @@ class CommentTest < Test::Unit::TestCase
     should belong_to(:post)
     should have_many(:replies)
     should belong_to(:parent)
+    should validate_presence_of(:body)
 
   end
 end

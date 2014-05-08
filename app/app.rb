@@ -3,6 +3,7 @@ module PadrinoBlog
     use ActiveRecord::ConnectionAdapters::ConnectionManagement
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Rendering
 
     enable :sessions
 
