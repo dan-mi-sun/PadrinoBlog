@@ -29,7 +29,7 @@ PadrinoBlog::App.controllers :authors do
 
     if @author.save
       flash[:notice] = "WHHHHHHHHHHHHHYYYYYYYYYYYYYYYYYY"
-      redirect '/'
+      redirect :'authors'
     else
       @error_message = @author.errors.full_messages
       render :'authors/new'
@@ -38,7 +38,8 @@ PadrinoBlog::App.controllers :authors do
   end
 
   get :index do
-
+    @author_list = Author.all
+    render :'authors/index'
   end
 
   get :show do

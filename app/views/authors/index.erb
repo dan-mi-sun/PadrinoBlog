@@ -1,0 +1,21 @@
+<!DOCTYPE htmll>
+<html>
+  <head>
+    <title>Index of Authors</title>
+    </head>
+
+    <body>
+      <h3>Index of Authors.</h3>
+
+      <% @author_list.each do |author| %>
+      <div class="author">
+        <%= author.first_name %> <%= author.last_name %>
+        <!-- <a href="/person/edit/<#%=person.id %>">Edit</a> -->
+
+      <#% form_tag "person/#{person.id}", :method => :delete do %>
+      <#%= submit_tag :delete %>
+    <#% end %>
+  </div>
+<% end %>
+</body>
+</html>
