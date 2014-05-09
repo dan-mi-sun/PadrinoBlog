@@ -37,9 +37,10 @@ PadrinoBlog::App.controllers :authors do
 
   end
 
-  delete :destroy, :with => :id do
+  get :destroy, :with => :id do
     @individual_author = Author.find(params[:id])
-    redirect :'authors/index'
+    @individual_author.destroy
+    redirect url_for(:authors, :index)
   end
 
 end
