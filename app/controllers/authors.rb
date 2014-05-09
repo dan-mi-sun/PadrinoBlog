@@ -1,24 +1,5 @@
 PadrinoBlog::App.controllers :authors do
-  layout :main_layout
-  
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
-
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   'Maps to url '/foo/#{params[:id]}''
-  # end
-
-  # get '/example' do
-  #   'Hello world!'
-  # end
+  layout :'main_layout'
   
   get :new do
     @author = Author.new
@@ -43,8 +24,9 @@ PadrinoBlog::App.controllers :authors do
     render :'authors/index'
   end
 
-  get :show do
-
+  get :show, :with => :id do
+    @individual_author = Author.find(params[:id])
+    render :'authors/show'
   end
 
   get :edit do
