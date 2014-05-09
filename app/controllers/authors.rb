@@ -1,4 +1,5 @@
 PadrinoBlog::App.controllers :authors do
+  layout :main_layout
   
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
