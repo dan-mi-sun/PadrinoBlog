@@ -34,10 +34,7 @@ PadrinoBlog::App.controllers :authors do
     render :'authors/edit'
   end
 
-  put :update, :with => :id do
-    @individual_author = Author.find(params[:id])
-    @individual_author.update_attributes(params[:author])
-    redirect url_for(:authors, :index)
+  put :update do
 
   end
 
