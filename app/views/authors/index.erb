@@ -6,6 +6,7 @@
       <% author.attributes.each do |attribute, values| %>
         <td> <%= values %></td>
       <% end %>
+        <td> <%= link_to 'Show', url_for(:authors, :show)  %></td>
       </tr>
     <% end %>
     </table>
