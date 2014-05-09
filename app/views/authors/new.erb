@@ -10,25 +10,7 @@
   </ul>
 
       <% form_for @author, url_for(:authors, :create) do |f| %>
-        <% field_set_tag do %>
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name %>
-        <% end %>
-        
-        <% field_set_tag do %>
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name %>
-        <% end %>
 
-        <% field_set_tag do %>
-          <%= f.label :email %>
-          <%= f.email_field :email %>
-        <% end %>
+        <%= partial 'authors/fields', :locals => { :f => f } %>
 
-        <% field_set_tag do %>
-          <%= f.label :website %>
-          <%= f.text_field :website %>
-        <% end %>
-
-      <%= submit_tag "Submit" %>
       <% end %>

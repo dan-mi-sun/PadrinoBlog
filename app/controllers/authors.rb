@@ -29,7 +29,8 @@ PadrinoBlog::App.controllers :authors do
     render :'authors/show'
   end
 
-  get :edit do
+  get :edit, :with => :id do
+    @individual_author = Author.find(params[:id])
 
   end
 
