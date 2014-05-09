@@ -1,7 +1,7 @@
 <h1>Edit Author Page</h1>
 
+<%= partial 'authors/errors' %>
+
 <% form_for @individual_author, url_for(:authors, :update, { :id => @individual_author.id}), :method => :put do |f| %>
-
   <%= partial 'authors/fields', :locals => { :f => f } %>
-
-      <% end %>
+<% end %>

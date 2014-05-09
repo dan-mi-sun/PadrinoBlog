@@ -1,16 +1,7 @@
-      <h1>Add Author Page</h1>
+<h1>Add Author Page</h1>
 
-    <%= flash[:notice] %>
-      <ul> 
-    <% if @error_message %>
-      <% @error_message.each do |error| %>
-        <li><%= error %> </li>
-    <% end %>
-    <% end %>
-  </ul>
+<%= partial 'authors/errors' %>
 
-      <% form_for @author, url_for(:authors, :create) do |f| %>
-
-        <%= partial 'authors/fields', :locals => { :f => f } %>
-
-      <% end %>
+<% form_for @author, url_for(:authors, :create) do |f| %>
+  <%= partial 'authors/fields', :locals => { :f => f } %>
+<% end %>
