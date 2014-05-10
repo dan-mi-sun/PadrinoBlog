@@ -1,0 +1,15 @@
+<% form_for @post, url_for(:posts, :create) do |p| %>
+  
+  <% field_set_tag do %>
+    <%= p.label :title %>
+    <%= p.text_field :title %>
+  <% end %>
+
+  <% field_set_tag do %>
+    <%= p.label :body %>
+    <%= p.text_field :body %>
+  <% end %>
+
+  <%= submit_tag "Publish"%>
+  
+<% end %>
