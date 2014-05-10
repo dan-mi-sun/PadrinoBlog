@@ -1,3 +1,12 @@
+/*FULL SCREEN IMAGE*/
+html { 
+  background: url(../images/shard.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 /* NAVIGATION MENU */
 #navcontainer ul {
   margin: 0;
@@ -19,4 +28,9 @@
 #navcontainer ul li a:hover {
   color: #fff;
   background-color: #369;
+}
+
+/*MAIN BODY*/
+body {
+  opacity: 0.75;
 }
