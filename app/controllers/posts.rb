@@ -13,7 +13,7 @@ PadrinoBlog::App.controllers :posts do
       redirect url_for(:authors, :index)
     else 
       @error_message = @post.errors.full_messages
-      render :'posts/new'
+      render :'posts/index'
     end
 
   end
