@@ -6,6 +6,15 @@ PadrinoBlog::App.controllers :posts do
   end
 
   post :create do
+    @post = Post.new(params[:post])
+
+    if @post.save
+      flash[:notice] = "Post has been published"
+      redirect url_for(:authors, :index)
+    else 
+      @error_message = @post.errors.full_messages
+      render :'posts/new'
+    end
 
   end
 
