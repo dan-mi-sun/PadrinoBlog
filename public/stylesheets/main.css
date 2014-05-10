@@ -40,7 +40,25 @@
   }
   
 }
+/* NAVIGATION MENU */
+#navcontainer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
 
-body a {
+#navcontainer ul li { 
+  display: inline; }
+
+#navcontainer ul li a {
   text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+  background-color: #036;
+}
+
+#navcontainer ul li a:hover {
+  color: #fff;
+  background-color: #369;
 }

@@ -7,9 +7,18 @@
     </head>
 
     <body>
-    
-      <%= yield %> 
-    
-    </body>
+      <div class="main">
+        <h4>Main Options</h4>
+        <div id="navcontainer">
+            <ul>
+              <li><%= link_to 'Add a Post', url_for(:posts, :new) %></li>
+              <li><%= link_to 'List all Posts', url_for(:posts, :index) %></li>
+              <li><%= link_to 'List all Authors', url_for(:authors, :index) %></li>
+            </ul>
+        </div>
 
-</html>
+        <%= yield %> 
+
+      </body>
+
+    </html>
