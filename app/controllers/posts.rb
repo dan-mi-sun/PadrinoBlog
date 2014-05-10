@@ -19,23 +19,27 @@ PadrinoBlog::App.controllers :posts do
   end
 
   get :index do
-
+    @post_list = Post.all
+    render :'posts/index'
   end
 
-  get :show do
-
+  get :show, :with => :id do
+    render :'posts/show'
   end
 
-  get :edit do
-
+  get :edit, :with => :id do
+    render :'posts/edit'
   end
+
 
   put :update do
-
+    @individual_post.update_attributes(params[:post])
+    redirect url_for(:posts, :index)  
   end
 
-  delete :destroy do
-
+  delete :destroy, :with => :id do
+    @individual_post.destroy
+    redirect url_for(:posts, :index)  
   end
-
+  
 end
