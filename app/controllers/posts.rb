@@ -34,11 +34,13 @@ PadrinoBlog::App.controllers :posts do
   end
 
   put :update do
+    @individual_post = Post.find(params[:id])
     @individual_post.update_attributes(params[:post])
     redirect url_for(:posts, :index)  
   end
 
-  delete :destroy, :with => :id do
+  get :destroy, :with => :id do
+    @individual_post = Post.find(params[:id])
     @individual_post.destroy
     redirect url_for(:posts, :index)  
   end
