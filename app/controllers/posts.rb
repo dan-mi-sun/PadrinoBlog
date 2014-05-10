@@ -1,7 +1,8 @@
 PadrinoBlog::App.controllers :posts do
   
   get :new do
-
+    @post = Post.new
+    render :'posts/new'
   end
 
   post :create do
