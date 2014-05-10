@@ -1,14 +1,14 @@
 <!DOCTYPE htmll>
 <html>
   <head>
-    <title>Index of Authors</title>
+    <title>Padrino Blog</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag :main %>
     </head>
 
     <body>
+      <h3> TODO: Placeholder for dynamic title </h3>
       <div class="main">
-        <h4>Main Options</h4>
         <div id="navcontainer">
             <ul>
               <li><%= link_to 'Add a Post', url_for(:posts, :new) %></li>
@@ -17,7 +17,6 @@
               <li><%= link_to 'List all Authors', url_for(:authors, :index) %></li>
             </ul>
         </div>
-
         <%= yield %> 
 
       </body>

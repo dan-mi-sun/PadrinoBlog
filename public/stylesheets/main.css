@@ -33,4 +33,5 @@ html {
 /*MAIN BODY*/
 body {
   opacity: 0.75;
+  padding: 2em;
 }
