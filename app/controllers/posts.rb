@@ -11,7 +11,7 @@ PadrinoBlog::App.controllers :posts do
 
     if @post.save
       flash[:notice] = "Post has been published"
-      redirect url_for(:posts, :index)
+      render :'posts/index'
     else 
       @error_message = @post.errors.full_messages
       render :'posts/index'
@@ -25,13 +25,13 @@ PadrinoBlog::App.controllers :posts do
   end
 
   get :show, :with => :id do
+    @individual_post = Post.find(params[:id])
     render :'posts/show'
   end
 
   get :edit, :with => :id do
     render :'posts/edit'
   end
-
 
   put :update do
     @individual_post.update_attributes(params[:post])

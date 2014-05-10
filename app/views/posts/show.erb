@@ -1,0 +1,9 @@
+<h3> <%= @individual_post.title%> </h3>
+
+<article class="IndividualPost">
+  <p>
+    <%= @individual_post.body %>
+  </p>
+</article>
+
+<%= link_to 'Post Index', url_for(:posts, :index) %>
