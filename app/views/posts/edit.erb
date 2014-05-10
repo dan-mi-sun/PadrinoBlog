@@ -1,0 +1,9 @@
+<h1>Edit Post Page</h1>
+
+<%= partial 'posts/errors' %>
+
+<% form_for @individual_post, url_for(:posts, :update, { :id => @individual_post.id}), :method => :put do |p| %>
+
+  <%= partial 'posts/fields', :locals => { :p => p} %>
+  
+<% end %>
