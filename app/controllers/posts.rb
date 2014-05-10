@@ -1,4 +1,5 @@
 PadrinoBlog::App.controllers :posts do
+  layout :'main_layout'
   
   get :new do
     @post = Post.new
@@ -10,7 +11,7 @@ PadrinoBlog::App.controllers :posts do
 
     if @post.save
       flash[:notice] = "Post has been published"
-      redirect url_for(:authors, :index)
+      redirect url_for(:posts, :index)
     else 
       @error_message = @post.errors.full_messages
       render :'posts/index'
