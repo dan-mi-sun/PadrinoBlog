@@ -5,6 +5,10 @@ PadrinoBlog::App.controllers :posts do
     @individual_post = Post.find(params[:id])
   end
 
+  before :edit, :update do
+     @author = Author.all.map{ |author| [author.first_name, author.id] } 
+  end
+
   get :new do
     @post = Post.new
     render :'posts/new'

@@ -1,5 +1,4 @@
 <!-- @author_ids = Author.pluck(:id, :name) -->
-<% @author = Author.all.map{ |author| [author.first_name, author.id]} %>
 <%= p.select(:author_id, { :options => @author } ) %>
 
 <% field_set_tag do %>
