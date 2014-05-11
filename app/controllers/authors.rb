@@ -6,13 +6,13 @@ PadrinoBlog::App.controllers :authors do
   end
   
   get :new do
+    @title = "Create New Author"
     @author = Author.new
     render :'authors/new'
   end
 
   post :create do
     @author = Author.new(params[:author])
-
     if @author.save
       flash[:notice] = "WHHHHHHHHHHHHHYYYYYYYYYYYYYYYYYY"
       redirect :'authors'
@@ -20,19 +20,21 @@ PadrinoBlog::App.controllers :authors do
       @error_message = @author.errors.full_messages
       render :'authors/new'
     end
-
   end
 
   get :index do
+    @title = "Index of Authors"
     @author_list = Author.all
     render :'authors/index'
   end
 
   get :show, :with => :id do
+    @title = "Show Author"
     render :'authors/show'
   end
 
   get :edit, :with => :id do
+    @title = "Edit Author"
     render :'authors/edit'
   end
 
