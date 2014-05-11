@@ -5,11 +5,12 @@ PadrinoBlog::App.controllers :posts do
     @individual_post = Post.find(params[:id])
   end
 
-  before :edit, :update do
+  before :new, :create, :edit, :update do
      @author = Author.all.map{ |author| [author.first_name, author.id] } 
   end
 
   get :new do
+    @title = "Create Post"
     @post = Post.new
     render :'posts/new'
   end
@@ -26,6 +27,7 @@ PadrinoBlog::App.controllers :posts do
   end
 
   get :index do
+    @title = "Index of Posts"
     @post_list = Post.all
     render :'posts/index'
   end
