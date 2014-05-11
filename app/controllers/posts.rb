@@ -30,6 +30,7 @@ PadrinoBlog::App.controllers :posts do
   end
 
   get :edit, :with => :id do
+    @individual_post = Post.find(params[:id])
     render :'posts/edit'
   end
 
