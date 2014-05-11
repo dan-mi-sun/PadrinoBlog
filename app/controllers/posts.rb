@@ -16,7 +16,6 @@ PadrinoBlog::App.controllers :posts do
 
   post :create do
     @post = Post.new(params[:post])
-
     if @post.save
       flash[:notice] = "Post has been published"
       render :'posts/new'
@@ -24,7 +23,6 @@ PadrinoBlog::App.controllers :posts do
       @error_message = @post.errors.full_messages
       render :'posts/new'
     end
-
   end
 
   get :index do
