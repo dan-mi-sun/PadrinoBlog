@@ -9,7 +9,7 @@
 
 <% field_set_tag do %>
   <%= p.label :body %>
-<%= p.text_field :body %>
+  <%= p.text_area :body, :class => "form-control", :rows => "20" %>
         <% end %>
 
 <%= submit_tag "Publish" %>
