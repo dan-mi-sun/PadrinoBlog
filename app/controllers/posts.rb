@@ -33,10 +33,12 @@ PadrinoBlog::App.controllers :posts do
   end
 
   get :show, :with => :id do
+    @title = "Show Post"
     render :'posts/show'
   end
 
   get :edit, :with => :id do
+    @title = "Edit Post"
     render :'posts/edit'
   end
 
