@@ -35,3 +35,9 @@ body {
   opacity: 0.75;
   padding: 2em;
 }
+
+fieldset text_field {
+ margin: 10px;
+ padding: 10px;
+ border-radius:6px;
+}

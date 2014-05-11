@@ -11,10 +11,10 @@ PadrinoBlog::App.controllers :posts do
 
     if @post.save
       flash[:notice] = "Post has been published"
-      render :'posts/index'
+      render :'posts/new'
     else 
       @error_message = @post.errors.full_messages
-      render :'posts/index'
+      render :'posts/new'
     end
 
   end
