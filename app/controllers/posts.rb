@@ -1,6 +1,10 @@
 PadrinoBlog::App.controllers :posts do
   layout :'main_layout'
-  
+ 
+  before :show, :edit, :update, :destroy  do
+    @individual_post = Post.find(params[:id])
+  end
+
   get :new do
     @post = Post.new
     render :'posts/new'
@@ -25,23 +29,19 @@ PadrinoBlog::App.controllers :posts do
   end
 
   get :show, :with => :id do
-    @individual_post = Post.find(params[:id])
     render :'posts/show'
   end
 
   get :edit, :with => :id do
-    @individual_post = Post.find(params[:id])
     render :'posts/edit'
   end
 
   put :update do
-    @individual_post = Post.find(params[:id])
     @individual_post.update_attributes(params[:post])
     redirect url_for(:posts, :index)  
   end
 
   get :destroy, :with => :id do
-    @individual_post = Post.find(params[:id])
     @individual_post.destroy
     redirect url_for(:posts, :index)  
   end
